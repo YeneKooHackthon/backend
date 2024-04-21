@@ -9,5 +9,13 @@ def sms_reply():
 
     # Create a response
     resp = MessagingResponse()
-    
-    return 'abcd'
+
+    # Add a text message
+    msg = resp.message("The Robots are coming! Head for the hills!")
+
+    # Add a picture message
+    msg.media(
+        "https://farm8.staticflickr.com/7090/6941316406_80b4d6d50e_z_d.jpg"
+    )
+
+    return str(resp)
