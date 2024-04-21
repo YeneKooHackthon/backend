@@ -12,7 +12,7 @@ def sms_reply():
 
         # Create a response
         resp = MessagingResponse()
-
+        print("////////////////////////////////////////////////////")
         # Determine the appropriate response
         if 'hello' in incoming_msg.lower():
             # If the user said 'hello', respond with a greeting
@@ -20,6 +20,7 @@ def sms_reply():
         else:
             # For all other messages, say you didn't understand
             resp.message("I'm sorry, I didn't understand that. Try sending 'hello'.")
+            
 
         return str(resp)
     else:
