@@ -29,8 +29,8 @@ def sms_reply():
     # Send an SMS
     message = client.messages.create(
         body='Hello, this is a test message!',
-        from_='224231-6269',
-        to='0984877774'
+        from_='+12242316269',
+        to='+251984877774'
     )
 
     print(message.sid)
