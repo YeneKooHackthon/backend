@@ -14,14 +14,15 @@ Make sure you have Python 3.9 or later installed on your system. You can downloa
 
 1. Clone this repository to your local machine:
 
-````bash
+```bash
 git clone <repository-url>
+```
 
 2. Install the required dependencies using pip:
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
 ### Running the Server
 
@@ -38,7 +39,7 @@ By default, the server will run on `http://127.0.0.1:8000`.
 ## Project Structure
 
 ```
-fastapi-project/
+GebereKoo-backend/
 │
 ├── main.py
 ├── README.md
