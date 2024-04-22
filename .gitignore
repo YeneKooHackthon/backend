@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+env
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+logs/
+
+# Dependency directories
+# These are directories for dependencies that are not required to run your project.
+# See https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-target
+pip-wheel-metadata/
+
+# Environment variables
+.env
+
+# Compiled Python files
+*.pyc
+
+# Database
+*.sqlite3
+
+# Configuration files
+*.yml
+*.yaml
+
+# Dependency files
+*.lock
