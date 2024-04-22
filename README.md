@@ -1,7 +1,8 @@
-````
 # GebereKoo backend
 
+```
 This is a GebereKoo FastAPI project.
+```
 
 ## Getting Started
 
@@ -13,15 +14,14 @@ Make sure you have Python 3.9 or later installed on your system. You can downloa
 
 1. Clone this repository to your local machine:
 
-```bash
+````bash
 git clone <repository-url>
-````
 
 2. Install the required dependencies using pip:
 
 ```bash
 pip install -r requirements.txt
-```
+````
 
 ### Running the Server
 
@@ -55,8 +55,6 @@ Contributions are welcome! Feel free to open an issue or submit a pull request i
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ```
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
