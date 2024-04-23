@@ -1,9 +1,28 @@
 from fastapi import FastAPI
 from twilio.twiml.messaging_response import MessagingResponse
 # from twilio.rest import Client
+import requests
 
+end_point=""
 app = FastAPI()
 
+
+# URL of the endpoint
+url = 'https://api-geberekoo.onrender.com/predict?plant=corn'
+
+# Path to the image file
+image_path = 'D:\gebereKoo\example.jpg'
+
+result = 'failed'
+# Open the image file
+with open(image_path, 'rb') as file:
+    # Set up the form data
+    files = {'file': (image_path, file, 'image/jpeg')}
+    # Make the POST request
+    response = requests.post(url, files=files)
+
+# Print the response from the server
+    result = response.text
 
 @app.get("/sms")
 def sms_reply():
@@ -36,4 +55,4 @@ def sms_reply():
 
     # print(message.sid)
 
-    return str(resp)
+    return result
