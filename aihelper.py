@@ -85,10 +85,10 @@ def aiIMGExplain(img_binnary, plant_name = None, provider = None):
         contents=[promptText(plant_name), plant_picture]
     )
 
-    json_string = to_markdown(response if provider == 'gpt' else response.text).replace("  json\n", "")
+    # json_string = to_markdown(response if provider == 'gpt' else response.text).replace("  json\n", "")
 
-    data = json.loads(json_string)
-    return data
+    # data = json.loads(json_string)
+    return response
 
 
 def aiTextExplain(txt, context):
