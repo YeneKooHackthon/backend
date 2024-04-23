@@ -36,4 +36,4 @@ def sms_reply():
 
     # print(message.sid)
 
-    return str(resp)
+    return str(msg)
