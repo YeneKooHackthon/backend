@@ -1,6 +1,7 @@
 import google.generativeai as genai
 import textwrap
-import json
+import json 
+from gptVision import aiIMGExplainGPT 
 
 import os
 from dotenv import load_dotenv
@@ -73,19 +74,20 @@ def textPrompt(txt, context):
     return messages
 
 
-def aiIMGExplain(img_binnary, plant_name):
+def aiIMGExplain(img_binnary, plant_name = None, provider = None):
     plant_picture = {
         'mime_type': 'image/png',
         'data': img_binnary
     }
+    print('provider', provider)
 
-    response = imgModel.generate_content(
+    response = aiIMGExplainGPT(img_binnary) if provider == 'gpt' else imgModel.generate_content(
         contents=[promptText(plant_name), plant_picture]
     )
-    json_string = to_markdown(response.text).replace("  json\n", "")
+
+    json_string = to_markdown(response if provider == 'gpt' else response.text).replace("  json\n", "")
 
     data = json.loads(json_string)
-    print(response.text)
     return data
 
 
