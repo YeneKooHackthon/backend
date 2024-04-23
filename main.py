@@ -5,7 +5,7 @@ from inference import inFerence
 app = FastAPI()
 
 @app.get("/sms")
-def main(): #use the twilio.py file
+def main(): #use the twilio_mms.py file
     return 'abcd'
 
 @app.post("/predict")
