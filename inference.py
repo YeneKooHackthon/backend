@@ -2,7 +2,7 @@ import onnxruntime
 import numpy as np
 from PIL import Image
 import io
-
+from aihelper import aiIMGExplain
 
 # Load the ONNX model
 onnx_model = {
@@ -45,7 +45,7 @@ async def inFerence(plant_name, file):
     img_array = np.array(image)
     img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
     img_array = img_array / 255.0  # Normalize the image
-    ai_res = modelPredction(plant_name, img_array) if plant_name in custom_trained_models else f'no support yet for {plant_name} to LLM'
+    ai_res = modelPredction(plant_name, img_array) if plant_name in custom_trained_models else aiIMGExplain(img_array, '')
     
     return {"predicted_class": ai_res}
 
