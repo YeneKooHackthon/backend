@@ -49,13 +49,15 @@ def promptText(plant_name):
 
     prevention_or_treatment_mechanisms: Offer expert recommendations for preventing disease spread or implementing effective treatment strategies. Focus on sustainable practices to promote long-term plant health and ecosystem resilience. (List 3 mechanisms)
 
-    temperature: Provide the temperature range in degrees Celsius that the plant thrives in. Example: 15°C
+    temperature: Provide the temperature range in degrees Celsius that the currunt plant is in. Example: 15°C,
 
-    humidity: Give the humidity range in percentage suitable for the plant. Example: 40-60%
+    humidity: Give the humidity range in percentage that the currunt plant is in. Example: 40-60%,
 
     Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, answer as your are a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
     !NOTICE: force your response to be in JSON 
+
+    Diagnose the img below and wrap your response in Curly brackets and dont put the word json infront of your response just give the json response
     '''
 
     return messages
@@ -86,9 +88,10 @@ def aiIMGExplain(img_binnary, plant_name = None, provider = None):
     )
 
     # json_string = to_markdown(response if provider == 'gpt' else response.text).replace("  json\n", "")
+    res = response if provider == 'gpt' else response.text
 
     # data = json.loads(json_string)
-    return response
+    return res
 
 
 def aiTextExplain(txt, context):
