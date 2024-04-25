@@ -1,6 +1,5 @@
 import google.generativeai as genai
 import textwrap
-import json 
 from gptVision import aiIMGExplainGPT 
 
 import os
@@ -49,10 +48,14 @@ def promptText(plant_name):
 
     prevention_or_treatment_mechanisms: Offer expert recommendations for preventing disease spread or implementing effective treatment strategies. Focus on sustainable practices to promote long-term plant health and ecosystem resilience. (List 3 mechanisms)
 
+    agrochemicals: Provide the necessary chemicals required for the plant. (List 3),
+
+    pesticides: Enumerate the names of pesticides required for the plant. (List 3).
+
     temperature: Provide the temperature range in degrees Celsius that the currunt plant is in. Example: 15°C,
 
     humidity: Give the humidity range in percentage that the currunt plant is in. Example: 40-60%,
-
+    
     Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, answer as your are a {plant_name}, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
     !NOTICE: force your response to be in JSON 

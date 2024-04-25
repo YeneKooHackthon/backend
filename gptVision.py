@@ -28,7 +28,6 @@ def aiIMGExplainGPT(base64_image):
 
                 "genus": "Provide its genus of the plant",
 
-
                 "scientific_name": "Provide scientific name of the plant",
 
                 "status": "Respond with "red" if the plant is unhealthy, and "green" if it's healthy.",
@@ -43,10 +42,14 @@ def aiIMGExplainGPT(base64_image):
 
                 "prevention_or_treatment_mechanisms": "Offer expert recommendations for preventing disease spread or implementing effective treatment strategies. Focus on sustainable practices to promote long-term plant health and ecosystem resilience. (List 3 mechanisms)",
 
+                "Agrochemicals": "Provide the necessary agrochemicals required by the plant. (List 3)",
+
+                "Pesticides": "Enumerate the names of pesticides required by the plant. (List 3),
+
                 "temperature": "Provide the temperature range in degrees Celsius that the currunt plant is in. Example: 15°C",
 
                 "humidity": "Give the humidity range in percentage that the currunt plant is in. Example: 40-60%",
-
+                
             }
             Approach each response as though you're advising a fellow agricultural expert, offering actionable advice based on your deep understanding of plant pathology and agricultural best practices. Remember, answer as your are an expert, and your expertise is crucial for its vitality and productivity in the agricultural sector.
 
