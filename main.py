@@ -4,6 +4,7 @@ from inference import inFerence
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
+import aiohttp
 
 
 app = FastAPI()
@@ -22,12 +23,13 @@ app.add_middleware(
 
 @app.get('/plant/img')
 async def fetch_data(plant: str = "plant"):
-    url = f'https://api.unsplash.com/search/photos?client_id={UNSPLASH_KEY}&query=${plant}-plant&per_page=5'
+    url = f'https://api.unsplash.com/search/photos?client_id={UNSPLASH_KEY}&query={plant}-plant&per_page=5'
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            data = await response.json()
 
     url_array = []
-    response = requests.get(url)
-    data = response.json()
-    # print('data', data)
 
     # Assuming data structure matches what is expected
     for result in data['results']:
@@ -35,8 +37,6 @@ async def fetch_data(plant: str = "plant"):
         url_array.append(full_url)
 
     return url_array
-
-
 
 
 @app.post("/predict")
